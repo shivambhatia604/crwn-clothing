@@ -13,6 +13,7 @@ import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
+// import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
 
 class App extends React.Component {
   // constructor(){
@@ -40,7 +41,7 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuth);
-
+      // addCollectionAndDocuments('collections',collectionsArray.map(({title,items})=>({title,items})));
       // console.log(this.state);
       // this.setState({currentUser: user});
       // console.log(user);
@@ -77,7 +78,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

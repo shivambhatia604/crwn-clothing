@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component.jsx";
+import { contacts } from "./components/contact/contact.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component.jsx";
 import CheckoutPage from "./pages/checkout/checkout.component.jsx";
 
@@ -34,6 +35,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route path="/contact" component={contacts} />
           <Route exact path="/checkout" component={CheckoutPage} />
           <Route
             exact

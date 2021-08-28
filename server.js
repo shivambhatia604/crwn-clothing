@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-if(process.env.NODE_ENV !== 'production') require('dotenv').config();
+if(process.env.NODE_ENV !== 'production') require('dotenv').config({path: 'C:\Users\Shivam Bhatia\Desktop\Web Devloper Course\Projects\WEB Dev Projects\crwn-clothing\.env'});
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
@@ -32,7 +32,7 @@ app.post('/payment', (req, res) => {
     const body = {
       source: req.body.token.id,
       amount: req.body.amount,
-      currency: 'usd'
+      currency: 'inr'
     };
   
     stripe.charges.create(body, (stripeErr, stripeRes) => {
